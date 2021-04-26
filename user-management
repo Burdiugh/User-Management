@@ -1,0 +1,34 @@
+#! /bin/bash
+
+
+clear
+source functions2.sh
+function menu(){
+echo -e "1.Show list all groups\n2.Show group by name\n3.Show list all users\n4.Show user by name\n5.Create new group\n6.Edit group\n7.Remove group\n8.Create user.\n9.Edit user\n10.Remove user by name with all files.\n"
+echo "Choose option"
+read choose
+case "$choose" in
+       0) exit=1; echo "Bye!";;
+       1)ShowListAllGroup; ;;
+       2)ShowGroupByName; ;;
+       3)ShowListAllUser; ;;
+       4)ShowUserByName; ;;
+       5)CreateGroup; ;;
+       6)EditGroup; ;;
+       7)DeleteGroup; ;;
+       8)CreateUser; ;;
+       9)EditUser; ;;
+       10)DeleteUser; ;;
+        *) echo "Wrong pick";; 
+esac
+}
+
+
+
+let exit=0
+
+while [[ $exit == 0 ]]
+do
+menu;
+done
+
